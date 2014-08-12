@@ -1,0 +1,41 @@
+<h3>
+	All Users
+</h3>
+
+<table>
+	<thead>
+		<tr>
+			<th>
+				Email
+			</th>
+			<th>
+				ID
+			</th>
+			<th>
+				Created
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% if @users.nil? %>
+		<%= No Users Yet! %>
+		<% else %>
+		<% @users.all.each do |u| %>
+		<tr>
+			<td>
+				<%= u.email %>
+			</td>
+			<td>
+				<%= u.id %>
+			</td>
+			<td>
+				<%= time_tag(u.created_at, :format=> '%B %d, %Y') %>
+			</td>
+			<td>
+				<%= link_to 'view', user_path(:id => u.id) %>
+			</td>
+		</tr>
+	</tbody>
+		<% end %>
+		<% end %>
+</table>

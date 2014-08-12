@@ -1,0 +1,11 @@
+<h3>
+	New User Page
+</h3>
+
+<%= form_for @user, method: :create do |f| %>
+	<%= f.label :email %>
+	<%= f.text_field :email %>
+	<%= f.label :password %>
+	<%= f.text_field :password %>
+	<%= f.submit "Create User" %>
+<% end %>

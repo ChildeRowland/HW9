@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>StoreAppRedo</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+	<%= flash[:notice] if flash[:notice] %><br>
+
+	<% if !session[:user_id].nil? %>
+	<%= link_to 'Log out', log_out_path, method: :get %>
+	<% end %>
+
+	<h1>
+		Shopper App
+	</h1>
+
+	<%= yield %>
+
+	<div>
+		<ul>
+			<li>
+				Create a new Rails app from scratch with a User model, Card model (for credit cards), Orders model, and a Products model. Attempt to implement a very basic store. 
+			</li>
+			<li>
+				To start, create a database diagram and next to each column, write out which data validation you’ll use. Then create the correct models and associations. 
+			</li>
+			<li>
+				Once you’ve done that, add data validations. Test them all out by trying to save incorrect data. 2. If you have time, build out an actual front end for the app as well.
+			</li>
+			<li>
+				NEVER store credit card information in a database unless you’re familiar with PCI compliance and standards. This is meant purely as an exercise.
+			</li>
+			<li>
+				Get all of the basic ActiveRecord data validations down!
+			</li>
+		</ul>
+	</div>
+
+</body>
+</html>

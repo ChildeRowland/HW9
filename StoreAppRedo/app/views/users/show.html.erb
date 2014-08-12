@@ -1,0 +1,8 @@
+<h3>
+	<%= "#{@user.id.ordinalize} user's page" %>
+</h3>
+
+<% u = @user %>
+<%= u.id %><br>
+<%= u.email %><br>
+<%= link_to 'delete user', user_path, method: :delete %>
